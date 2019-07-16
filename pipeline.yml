@@ -3,27 +3,27 @@ resources:
 - name: source-code-repository
   type: git
   source:
-    uri: {{sourcecode_git_repo_uri}}
-    branch: {{sourcecode_git_repo_branch}}
-    username: {{sourcecode_git_repo_username}}
-    password: {{sourcecode_git_repo_password}}
+    uri: ((sourcecode_git_repo_uri))
+    branch: ((sourcecode_git_repo_branch))
+    username: ((sourcecode_git_repo_username))
+    password: ((sourcecode_git_repo_password))
 
 - name: pipeline-repository
   type: git
   source:
-    uri: {{pipeline_git_repo_uri}}
-    branch: {{pipeline_git_repo_branch}}
-    username: {{pipeline_git_repo_username}}
-    password: {{pipeline_git_repo_password}}
+    uri: ((pipeline_git_repo_uri))
+    branch: ((pipeline_git_repo_branch))
+    username: ((pipeline_git_repo_username))
+    password: ((pipeline_git_repo_password))
 
 - name: cloudfoundry-dev
   type: cf
   source:
-    api: {{cf_target_url}}
-    username: {{cf_username}}
-    password: {{cf_password}}
-    organization: {{cf_org}}
-    space: {{cf_space}}
+    api: ((cf_target_url))
+    username: ((cf_username))
+    password: ((cf_password))
+    organization: ((cf_org))
+    space: ((cf_space))
     skip_cert_check: true
 
 jobs:
