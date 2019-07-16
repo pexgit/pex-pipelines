@@ -24,6 +24,9 @@ jobs:
   - get: source-code-repository
     trigger: true
   - task: build-dotnet-app
+    platform: windows    
+    inputs:
+    - name: source-code-repository
     run: 
     file: build-dotnet-app.yml
   - put: cloudfoundry-dev
