@@ -3,10 +3,18 @@ resources:
 - name: source-code-repository
   type: git
   source:
-    uri: {{git_repo_uri}}
-    branch: {{git_repo_branch}}
-    username: {{git_repo_username}}
-    password: {{git_repo_password}}
+    uri: {{sourcecode_git_repo_uri}}
+    branch: {{sourcecode_git_repo_branch}}
+    username: {{sourcecode_git_repo_username}}
+    password: {{sourcecode_git_repo_password}}
+
+- name: pipeline-repository
+  type: git
+  source:
+    uri: {{pipeline_git_repo_uri}}
+    branch: {{pipeline_git_repo_branch}}
+    username: {{pipeline_git_repo_username}}
+    password: {{pipeline_git_repo_password}}
 
 - name: cloudfoundry-dev
   type: cf
@@ -24,9 +32,11 @@ jobs:
   - get: source-code-repository
     trigger: true
   - task: build-dotnet-app
-    platform: windows    
-    inputs:
-    - name: source-code-repository
-    run: 
-    file: build-dotnet-app.yml
+    config:
+      platform: windows    
+      inputs:
+      - name: source-code-repository
+      - name: pipeline-repository
+      run: 
+        path: pipeline-repository/build_app.bat
   - put: cloudfoundry-dev
