@@ -1,0 +1,29 @@
+---
+resources:
+- name: source-code-repository
+  type: git
+  source:
+    uri: {{git_repo_uri}}
+    branch: {{git_repo_branch}}
+    username: {{git_repo_username}}
+    password: {{git_repo_password}}
+
+- name: cloudfoundry-dev
+  type: cf
+  source:
+    api: {{cf_target_url}}
+    username: {{cf_username}}
+    password: {{cf_password}}
+    organization: {{cf_org}}
+    space: {{cf_space}}
+    skip_cert_check: true
+
+jobs:
+- name: deploy-dotnet-dev
+  plan:
+  - get: source-code-repository
+    trigger: true
+  - task: build-dotnet-app
+    run: 
+    file: build-dotnet-app.yml
+  - put: cloudfoundry-dev

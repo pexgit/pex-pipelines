@@ -1,0 +1,14 @@
+---
+platform: windows
+
+image_resource:
+  type: docker-image
+  source:
+    repository: mcr.microsoft.com/dotnet/framework/sdk
+    tag: '4.7'
+
+inputs:
+- name: source
+
+run:
+  path: source/build.bat
