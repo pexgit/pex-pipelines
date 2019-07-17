@@ -40,3 +40,5 @@ jobs:
       run: 
         path: pipeline-repository/build_app.bat
   - put: cloudfoundry-dev
+    params: 
+      manifest: source-code-repository/manifest.yml
