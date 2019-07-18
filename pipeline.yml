@@ -31,6 +31,7 @@ jobs:
   plan:
   - get: source-code-repository
     trigger: true
+  - get: pipeline-repository
   - task: build-dotnet-app
     config:
       platform: windows    
@@ -40,5 +41,6 @@ jobs:
       run: 
         path: pipeline-repository/build_app.bat
   - put: cloudfoundry-dev
-    params: 
-      manifest: source-code-repository/manifest.yml
+    params:
+      manifest: source-code-repository/PexSampleAspNet/PexSampleAspNet/manifest.yml 
+      path: source-code-repository/PexSampleAspNet/PexSampleAspNet
