@@ -1,5 +1,5 @@
 cd source-code-repository
-nuget restore PexSampleAspNet/PexSampleAspNet/packages.config
+nuget restore -PackagesDirectory PexSampleAspNet/PexSampleAspNet/packages.config
 dotnet msbuild PexSampleAspNet/PexSampleAspNet/PexSampleAspNet.csproj ^
   /p:TargetFrameworkVersion=v4.7 ^
         /t:"clean;build;publish" ^
