@@ -9,5 +9,6 @@ dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
         /p:Configuration=$configuration ^
         /p:Platform=AnyCPU ^
         /p:DeployOnBuild=true ^
-        /p:PublishDirectory="../../publish-directory" ^
+        /p:PublishDirectory="./bin/Release/publish" ^
         /p:PublishProfile=folderprofile
+ dotnet publish PexSampleAspNet/PexSampleAspNet.csproj -c $configuration --output ../publish-directory
