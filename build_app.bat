@@ -1,5 +1,5 @@
 cd source-code-repository
-nuget locals global-packages -clear
+nuget locals all -clear
 nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
 dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
   /p:RoslynToolPath="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" ^
