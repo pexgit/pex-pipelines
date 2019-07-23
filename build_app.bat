@@ -1,4 +1,5 @@
 cd source-code-repository
+nuget install Microsoft.CodeDom.Providers.DotNetCompilerPlatform
 nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
 dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
   /p:TargetFrameworkVersion=v4.7 ^
