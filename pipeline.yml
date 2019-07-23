@@ -42,5 +42,5 @@ jobs:
         path: pipeline-repository/build_app.bat
   - put: cloudfoundry-dev
     params:
-      manifest: source-code-repository/PexSampleAspNet/PexSampleAspNet/manifest.yml 
-      path: source-code-repository/PexSampleAspNet/PexSampleAspNet
+      manifest: source-code-repository/PexSampleAspNet/manifest.yml 
+      path: source-code-repository/PexSampleAspNet
