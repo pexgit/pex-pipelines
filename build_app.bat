@@ -11,7 +11,8 @@ dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
         /p:Configuration=$configuration ^
         /p:Platform=AnyCPU ^
         /p:DeployOnBuild=true ^
-        /p:PublishDirectory="./bin/Release/publish" ^
+        /p:PublishDirectory="../publish-directory" ^
         /p:PublishProfile=folderprofile
  
-xcopy "PexSampleAspNet/bin/Release/publish" "../publish-directory" /O /X /E /H /K
+REM The publish directory is empty, and the contents of the bin/Release directory are missing the web.config
+xcopy "PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K
