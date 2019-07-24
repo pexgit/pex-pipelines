@@ -19,4 +19,3 @@ dir .\PexSampleAspNet\bin\Release
 REM Changed the OutputPath from bin/Release to bin
 REM The publish directory is empty, and the contents of the bin directory are missing the web.config
 xcopy "PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K
-xcopy "PexSampleAspNet" "../publish-directory" /O /X /E /H /K
