@@ -7,13 +7,13 @@ dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
   /p:RoslynToolPath="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" ^
   /p:TargetFrameworkVersion=v4.7 ^
         /t:"clean;build;publish" ^
-        /p:OutputPath="./bin/Release" ^
+        /p:OutputPath="./bin" ^
         /p:Configuration=$configuration ^
         /p:Platform=AnyCPU ^
         /p:DeployOnBuild=true ^
         /p:PublishDirectory="../publish-directory" ^
         /p:PublishProfile=folderprofile
  
-REM The publish directory is empty, and the contents of the bin/Release directory are missing the web.config
-dir .\PexSampleAspNet\
-xcopy "PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K
+REM Changed the OutputPath from bin/Release to bin
+REM The publish directory is empty, and the contents of the bin directory are missing the web.config
+xcopy "PexSampleAspNet/bin" "../publish-directory" /O /X /E /H /K
