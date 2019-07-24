@@ -16,7 +16,7 @@ dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
         -p:PublishDirectory="./bin/Release/publish" ^
         -p:PublishProfile=folderprofile
 
-dir ./PexSampleAspNet/bin/Release/publish
+dir .\PexSampleAspNet\bin\Release\publish
 
 REM Changed the OutputPath from bin/Release to bin
 REM The publish directory is empty, and the contents of the bin directory are missing the web.config
