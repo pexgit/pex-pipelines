@@ -4,17 +4,15 @@ nuget locals all -clear
 nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
 
 dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
-  -t:publish ^
-  -p:RoslynToolPath="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" ^
-  -p:TargetFrameworkVersion=v4.7 ^
-        -t:clean ^
-        -t:build ^
-        -p:OutputPath="./bin/Release" ^
-        -p:Configuration=$configuration ^
-        -p:Platform=AnyCPU ^
-        -p:DeployOnBuild=true ^
-        -p:PublishDirectory="./bin/Release/publish" ^
-        -p:PublishProfile=folderprofile
+  /t:publish ^
+  /p:RoslynToolPath="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" ^
+  /p:TargetFrameworkVersion=v4.7 ^
+        /p:OutputPath="./bin/Release" ^
+        /p:Configuration=$configuration ^
+        /p:Platform=AnyCPU ^
+        /p:DeployOnBuild=true ^
+        /p:PublishDirectory="./bin/Release/publish" ^
+        /p:PublishProfile=folderprofile
 
 dir .\PexSampleAspNet\bin\Release\publish
 
