@@ -1,7 +1,7 @@
 cd source-code-repository
 
 nuget locals all -clear
-nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
+REM nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
 
 dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
   /t:publish ^
@@ -14,8 +14,8 @@ dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
         /p:PublishDirectory="./bin/Release/publish" ^
         /p:PublishProfile=folderprofile
 
-dir .\PexSampleAspNet\bin\Release\publish
+dir .\PexSampleAspNet\bin\Release
 
 REM Changed the OutputPath from bin/Release to bin
 REM The publish directory is empty, and the contents of the bin directory are missing the web.config
-REM xcopy "PexSampleAspNet/bin/Release/publish" "../publish-directory" /O /X /E /H /K
+REM xcopy "PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K
