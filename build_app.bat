@@ -14,7 +14,7 @@ dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
         /p:PublishDirectory="./bin/Release/publish" ^
         /p:PublishProfile=folderprofile
         
-dir ./PexSampleAspNet
+dir .\PexSampleAspNet
 
 xcopy "./PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K /Q
 xcopy "./PexSampleAspNet/web.config" "../publish-directory" /O /X /E /H /K /Q
