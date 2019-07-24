@@ -18,4 +18,4 @@ dir .\PexSampleAspNet
 
 xcopy "./PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K /Q /Y
 copy "..\pipeline-repository\excludebuilddirs.txt" .
-xcopy "./PexSampleAspNet" "../publish-directory" /O /X /E /H /K /Q /Y /EXCLUDE:".\excludebuilddirs.txt"
+xcopy "./PexSampleAspNet" "../publish-directory" /O /X /E /H /K /Q /Y
