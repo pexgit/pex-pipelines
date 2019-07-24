@@ -18,4 +18,4 @@ dir .\PexSampleAspNet
 
 xcopy "./PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K /Q 
 xcopy "./PexSampleAspNet" "../publish-directory" /O /X /E /H /K /Q
-rd ../publish-directory/bin ../publish-directory/obj
+rd "../publish-directory/bin" "../publish-directory/obj"
