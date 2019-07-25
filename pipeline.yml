@@ -38,9 +38,13 @@ jobs:
       inputs:
       - name: source-code-repository
       - name: pipeline-repository
+      outputs:
+      - name: publish-directory
       run: 
-        path: pipeline-repository/build_app.bat
+        path: powershell
+        args: 
+          - ./pipeline-repository/build_app.bat
   - put: cloudfoundry-dev
     params:
       manifest: source-code-repository/PexSampleAspNet/manifest.yml 
-      path: source-code-repository/PexSampleAspNet
+      path: publish-directory
