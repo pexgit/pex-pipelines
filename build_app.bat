@@ -11,7 +11,7 @@ nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
         /p:Configuration=$configuration ^
         /p:Platform=AnyCPU ^
         /p:PublishDirectory="./bin/Release/publish" ^
-        /p:PublishProfile=folderprofile
+        /p:PublishProfile=folderprofile ^
         /p:DeployOnBuild=true
         
 dir .\PexSampleAspNet\bin\Release
