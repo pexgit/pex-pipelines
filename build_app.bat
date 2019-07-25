@@ -1,21 +1,11 @@
 cd source-code-repository
 
 nuget locals all -clear
+
 nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
-
-dotnet msbuild PexSampleAspNet/PexSampleAspNet.csproj ^
-  /t:"clean;build;publish" ^
-  /p:RoslynToolPath="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" ^
-  /p:TargetFrameworkVersion=v4.7 ^
-        /p:OutputPath="./bin/Release" ^
-        /p:Configuration=$configuration ^
-        /p:Platform=AnyCPU ^
-        /p:DeployOnBuild=true ^
-        /p:PublishDirectory="./bin/Release/publish" ^
-        /p:PublishProfile=folderprofile
         
-dir .\PexSampleAspNet
+dotnet publish PexSampleAspNet/PexSampleAspNet.csproj -c Release -f net472 -o "./PexSampleAspNet/publish" -r win-x64
+        
+dir .\PexSampleAspNet\publish
 
-xcopy "./PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K /Q /Y
-copy "..\pipeline-repository\excludebuilddirs.txt" .
-xcopy "./PexSampleAspNet" "../publish-directory" /O /X /E /H /K /Q /Y
+xcopy "./PexSampleAspNet/publish" "../publish-directory" /O /X /E /H /K /Q /Y
