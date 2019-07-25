@@ -13,7 +13,5 @@ nuget restore PexSampleAspNet/packages.config -PackagesDirectory packages
         /p:PublishDirectory="./bin/Release/publish" ^
         /p:PublishProfile=folderprofile ^
         /p:DeployOnBuild=true
-        
-dir .\PexSampleAspNet\bin\Release
 
-xcopy "./PexSampleAspNet/bin/Release" "../publish-directory" /O /X /E /H /K /Q /Y
+xcopy "./PexSampleAspNet/bin/Release/publish" "../publish-directory" /O /X /E /H /K /Q /Y
